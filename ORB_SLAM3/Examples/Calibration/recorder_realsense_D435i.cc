@@ -213,6 +213,9 @@ int main(int argc, char **argv) {
 
     cv::Mat imLeft, imRight;
     ofstream accFile, gyroFile, cam0TsFile, cam1TsFile;
+
+    cout << "openfile" << endl;
+
     accFile.open (directory + "/IMU/acc.txt");
     gyroFile.open (directory + "/IMU/gyro.txt");
     cam0TsFile.open (directory + "/cam0/times.txt");
@@ -225,6 +228,7 @@ int main(int argc, char **argv) {
     //     exit(-1);
     // }
 
+    cout << "end openfile" << endl;
     // Clear IMU vectors
     v_gyro_data.clear();
     v_gyro_timestamp.clear();
