@@ -68,6 +68,9 @@ RUN cd ORB_SLAM3 && \
     # Build Thirdparty and Main Project
     ./build.sh
 
+# Remove ORB_SLAM3/Examples/Calibration/recorder_realsense_D435i binary (NEED TO REBUILD ON HOST)
+RUN rm -rf ORB_SLAM3/Examples/Calibration/recorder_realsense_D435i
+
 # ---------------------------------------------------------
 # 5. Install Kalibr
 # ---------------------------------------------------------
