@@ -11,10 +11,11 @@ fi
 
 # 3. Run the container
 echo "Starting container..."
-docker run -it --rm \
+docker run -it \
     --net=host \
     --env="DISPLAY=$DISPLAY" \
     --env="QT_X11_NO_MITSHM=1" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
     --privileged \
+    --name camera_imu_calib \
     camera_imu_calib
