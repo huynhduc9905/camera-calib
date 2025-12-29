@@ -41,6 +41,7 @@ bool b_continue_session;
 void exit_loop_handler(int s){
     cout << "Finishing session" << endl;
     b_continue_session = false;
+
 }
 
 static rs2_option get_sensor_option(const rs2::sensor& sensor)
@@ -98,6 +99,7 @@ int main(int argc, char **argv) {
 
     struct sigaction sigIntHandler;
 
+
     sigIntHandler.sa_handler = exit_loop_handler;
     sigemptyset(&sigIntHandler.sa_mask);
     sigIntHandler.sa_flags = 0;
@@ -139,6 +141,7 @@ int main(int argc, char **argv) {
             if (index == 3){
                 sensor.set_option(RS2_OPTION_ENABLE_MOTION_CORRECTION,0);
             }
+
         }
 
     // Declare RealSense pipeline, encapsulating the actual device and sensors
